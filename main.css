@@ -1,0 +1,90 @@
+header
+{
+    /* border: 1px; */
+    border-style: double;
+    height: 15vh;
+    color: black;
+    font-size: calc(5vw + 6vh);
+    margin-bottom: 2%;
+}
+
+header.Jour
+{
+    border-color: black;
+    background-color: white;
+}
+
+.container
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.item
+{
+    width: 100%;
+}
+
+.item_img
+{
+    width: 33%;
+}
+
+.container_Item
+{
+    display: flex;
+    flex-direction: row;
+}
+
+@media(max-width:600px){
+    .container.small{
+        flex-direction: column;
+    }
+    .container_Item.small
+    {
+        flex-direction: column;
+        width: 100%;
+    }
+    .item_img.small
+    {
+        width: 100%;
+    }
+}
+
+@media(min-width:600px) and (max-width:800px){
+    .container_Item.medium
+    {
+        flex-direction: column;
+        width: 66%;
+    }
+}
+
+img
+{
+    border-radius: 50%;
+}
+
+.Nuit
+{
+    color: #b8b8b8;
+    border-color: white;
+    background-color: black;
+}
+
+.Description
+{
+    margin-left: 5hv;
+    margin-right: 5hv;
+}
+
+.HCenter
+{
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+}
