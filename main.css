@@ -4,7 +4,7 @@ header
     border-style: double;
     height: 15vh;
     color: black;
-    font-size: calc(5vw + 6vh);
+    /* font-size: calc(5vw + 6vh); */
     margin-bottom: 2%;
 }
 
@@ -79,7 +79,7 @@ img
 
 .HCenter
 {
-    font-size: 0.9em;
+    font-size: 5em;
     display: flex;
     align-items: center;
     justify-content: center;
