@@ -1,0 +1,136 @@
+body
+{
+    background-color: #f1e8cf;
+    transition: .4s;
+}
+
+header
+{
+    /* border: 1px; */
+    border-style: double;
+    height: 15vh;
+    color: black;
+    /* font-size: calc(5vw + 6vh); */
+    margin-bottom: 2%;
+
+    // &.Jour
+    // {
+    //     border-color: black;
+    //     background-color: white;
+    // }
+}
+
+img
+{
+    border-radius: 50%;
+}
+
+#buttonJourNuit
+{
+    cursor: pointer;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    border-style: outset;
+    border-width: 3px;
+    border-color: #868484;
+    border-radius: 10px;
+    padding: 5px;
+
+    &:hover
+    {
+        background-color: #e6e6e6;
+    }
+
+    &.ClickOn
+    {
+        border-style: inset;
+    }
+}
+
+.container
+{
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width: 600px) {
+        &.small {
+            flex-direction: column;
+        }
+    }
+}
+
+.item
+{
+    width: 100%;
+}
+
+.item_img
+{
+    width: 33%;
+
+    @media(max-width:600px){
+        &.small
+        {
+            width: 100%;
+        }
+    }
+}
+
+.container_Item
+{
+    display: flex;
+    flex-direction: row;
+
+    @media(max-width:600px){
+        &.small
+        {
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+
+    @media(min-width:600px) and (max-width:800px){
+        &.medium
+        {
+            flex-direction: column;
+            width: 66%;
+        }
+    }
+}
+
+.Nuit
+{
+    color: #b8b8b8;
+    border-color: white;
+    background-color: #645f5f;
+    transition: .4s;
+}
+
+.Description
+{
+    margin-left: 5hv;
+    margin-right: 5hv;
+}
+
+.HCenter
+{
+    font-size: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+}
+
+.NoSelect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+  }
