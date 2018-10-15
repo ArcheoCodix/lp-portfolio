@@ -8,15 +8,15 @@ header {
   border-style: double;
   height: 15vh;
   color: black;
-  /* font-size: calc(5vw + 6vh); */
   margin-bottom: 2%;
+  /* font-size: calc(5vw + 6vh); */
 }
 
 img {
   border-radius: 50%;
 }
 
-#buttonJourNuit {
+.buttonJourNuit {
   cursor: pointer;
   position: fixed;
   right: 15px;
@@ -26,11 +26,12 @@ img {
   border-color: #868484;
   border-radius: 10px;
   padding: 5px;
+  background-color: #f1e8cf;
 }
-#buttonJourNuit:hover {
+.buttonJourNuit:hover {
   background-color: #e6e6e6;
 }
-#buttonJourNuit.ClickOn {
+.buttonJourNuit.ClickOn {
   border-style: inset;
 }
 
