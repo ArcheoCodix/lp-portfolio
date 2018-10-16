@@ -1,6 +1,6 @@
-var i = 0;
-var fin = false;
+var i;
 var timeout;
+var isNuit = false;
 
 $(document).ready(function(){
 
@@ -14,21 +14,22 @@ $(document).ready(function(){
 
     $("#buttonJourNuit").click(clickLightDark);
 
-    var today = new Date();
-    today.setHours(21);
-
-    if(today.getHours() >= 20)
-        clickLightDark();
+    setInterval(surveyHour, 60000);
 });
 
 function clickLightDark()
 { 
-    var tabCouleurNuit = ["#eedfb5","#ecd490","#e9c667","#a78e4c","#5a5139"];
+    let tabCouleurNuit = ["#eedfb5","#ecd490","#ceb36b","#a7925a","#5a5139"];
     
+    isNuit = !isNuit;
+    console.log(isNuit);
+    
+    $("#buttonJourNuit").hide();
+
     if ($("body").hasClass("Nuit"))
     {
         i = tabCouleurNuit.length-1;
-        fin = false;
+        isNuit = false;
         timeout = setInterval(changeColorTimer, 80, tabCouleurNuit, false);
     }
     else
@@ -40,40 +41,62 @@ function clickLightDark()
 }
 
 function changeColorTimer(tabColor, sensPlus)
+{
+    if (i < tabColor.length && i >= 0 )
+        $("body").css("background-color",tabColor[i]);
+    else
     {
-        if (i < tabColor.length && i >= 0 )
-            $("body").css("background-color",tabColor[i]);
-        else
-            {
-                $("body").css("background-color","");
-                
-                if (sensPlus == false)
-                {
-                    $("#buttonJourNuit").text("Mode Nuit");
-                    $("title").text("Présentation (Bonjour)");
-                    $("body").removeClass("Nuit");
-                    $("header").removeClass("Nuit");
-                    $("#buttonJourNuit").removeClass("Nuit");
-                }
-                else
-                {
-                    $("#buttonJourNuit").text("Mode Jour");
-                    $("body").addClass("Nuit");
-                    $("header").addClass("Nuit");
-                    $("#buttonJourNuit").addClass("Nuit");
-                    $("title").text("Présentation (Bonsoir)");
-                }
-                
-                setTimeout(leClear, 1);
-            }
+        $("body").css("background-color","");
         
-        if (sensPlus == true)
-            i++;
+        if (sensPlus == false)
+        {
+            $("#buttonJourNuit").text("Mode Nuit");
+            $("title").text("Présentation (Bonjour)");
+            $("body").removeClass("Nuit");
+            $("header").removeClass("Nuit");
+            $("#buttonJourNuit").removeClass("Nuit");
+        }
         else
-            i--;
+        {
+            $("#buttonJourNuit").text("Mode Jour");
+            $("body").addClass("Nuit");
+            $("header").addClass("Nuit");
+            $("#buttonJourNuit").addClass("Nuit");
+            $("title").text("Présentation (Bonsoir)");
+        }
+        
+        setTimeout(leClear, 1);
+    }
+    
+    if (sensPlus == true)
+        i++;
+    else
+    {
+        $("header").removeClass("Nuit");
+        i--;
+    }
+}
+
+function leClear()
+{
+    $("#buttonJourNuit").show();
+    clearInterval(timeout);
+}
+
+function surveyHour()
+{
+    let today = new Date();
+    let hour = today.getHours();
+
+    if(hour >= 20 || hour >= 0 && hour < 9)
+    {
+        if (isNuit === false)
+            clickLightDark();
+    } else if(hour >= 9)
+    {
+        if (isNuit === true)
+            clickLightDark();
     }
 
-    function leClear()
-    {
-        clearInterval(timeout);
-    }
+}
+

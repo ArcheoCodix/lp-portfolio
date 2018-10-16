@@ -6,10 +6,10 @@ body {
 header {
   /* border: 1px; */
   border-style: double;
-  height: 15vh;
   color: black;
   margin-bottom: 2%;
-  /* font-size: calc(5vw + 6vh); */
+  overflow: auto;
+  font-size: 200%;
 }
 
 img {
@@ -88,7 +88,6 @@ img {
 }
 
 .HCenter {
-  font-size: 5em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,7 +95,6 @@ img {
   line-height: 1;
   padding: 0;
   margin: 0;
-  max-height: 100%;
 }
 
 .NoSelect {
