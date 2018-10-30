@@ -4,6 +4,11 @@ var isNuit = false;
 
 $(document).ready(function(){
 
+    var today = new Date();
+    var bornDay = new Date(1996,9,6);
+
+    $("#todayAge").text("("+diff_years(today,bornDay)+" ans)");
+
     $("#buttonJourNuit").mousedown(function () { 
         $("#buttonJourNuit").addClass("ClickOn");
     });
@@ -98,5 +103,12 @@ function surveyHour()
             clickLightDark();
     }
 
+}
+
+function diff_years(dt2, dt1) 
+{
+    var diff =(dt2.getTime() - dt1.getTime()) / 1000;
+    diff /= (60 * 60 * 24);
+    return Math.abs(Math.round(diff/365.25));
 }
 

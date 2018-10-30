@@ -10,7 +10,7 @@ header
     border-style: double;
     // height: 15vh;
     color: black;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
     overflow: auto;
     font-size: 200%;
 
@@ -24,13 +24,30 @@ header
 img
 {
     border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// p
+// {
+//     white-space: pre;
+// }
+
+#myLink
+{
+    position: fixed;
+    left: 15px;
+    bottom: 15px;
 }
 
 .buttonJourNuit
 {
     cursor: pointer;
     position: fixed;
-    right: 15px;
+    right: 10px;
     bottom: 15px;
     border-style: outset;
     border-width: 3px;
@@ -65,16 +82,22 @@ img
 .item
 {
     width: 100%;
-}
+    border-style: outset;
+    border-width: 3px;
+    border-color: #868484;
+    border-radius: 10px;
+    margin: 1%;
+    padding: 1%;
 
-.item_img
-{
-    width: 33%;
+    &.img
+    {
+        width: 31%;
 
-    @media(max-width:600px){
-        &.small
-        {
-            width: 100%;
+        @media(max-width:600px){
+            &.small
+            {
+                width: 96%;
+            }
         }
     }
 }
@@ -83,12 +106,13 @@ img
 {
     display: flex;
     flex-direction: row;
+    width: 90%;
 
     @media(max-width:600px){
         &.small
         {
             flex-direction: column;
-            width: 100%;
+            width: 96%;
         }
     }
 
@@ -96,7 +120,7 @@ img
         &.medium
         {
             flex-direction: column;
-            width: 66%;
+            width: 62%;
         }
     }
 }
@@ -124,7 +148,6 @@ img
     text-align: center;
     line-height: 1;
     padding: 0;
-    margin: 0;
     // max-height: 100%;
 }
 
