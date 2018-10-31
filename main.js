@@ -9,15 +9,15 @@ $(document).ready(function(){
 
     $("#todayAge").text("("+diff_years(today,bornDay)+" ans)");
 
-    $("#buttonJourNuit").mousedown(function () { 
-        $("#buttonJourNuit").addClass("ClickOn");
+    $(".buttonJourNuit").mousedown(function () { 
+        $(".buttonJourNuit").addClass("ClickOn");
     });
 
-    $("#buttonJourNuit").mouseup(function () { 
-        $("#buttonJourNuit").removeClass("ClickOn");
+    $(".buttonJourNuit").mouseup(function () { 
+        $(".buttonJourNuit").removeClass("ClickOn");
     });
 
-    $("#buttonJourNuit").click(clickLightDark);
+    $(".buttonJourNuit").click(clickLightDark);
 
     setInterval(surveyHour, 60000);
 });
@@ -29,7 +29,7 @@ function clickLightDark()
     isNuit = !isNuit;
     console.log(isNuit);
     
-    $("#buttonJourNuit").hide();
+    $(".buttonJourNuit").hide();
 
     if ($("body").hasClass("Nuit"))
     {
@@ -55,18 +55,20 @@ function changeColorTimer(tabColor, sensPlus)
         
         if (sensPlus == false)
         {
-            $("#buttonJourNuit").text("Mode Nuit");
-            $("title").text("Présentation (Bonjour)");
+            $(".buttonJourNuit").text("Mode Nuit");
             $("body").removeClass("Nuit");
             $("header").removeClass("Nuit");
-            $("#buttonJourNuit").removeClass("Nuit");
+            $(".buttonJourNuit").removeClass("Nuit");
+            $(".bottomBar").removeClass("Nuit");
+            $("title").text("Présentation (Bonjour)");
         }
         else
         {
-            $("#buttonJourNuit").text("Mode Jour");
+            $(".buttonJourNuit").text("Mode Jour");
             $("body").addClass("Nuit");
             $("header").addClass("Nuit");
-            $("#buttonJourNuit").addClass("Nuit");
+            $(".buttonJourNuit").addClass("Nuit");
+            $(".bottomBar").addClass("Nuit");
             $("title").text("Présentation (Bonsoir)");
         }
         
@@ -84,7 +86,7 @@ function changeColorTimer(tabColor, sensPlus)
 
 function leClear()
 {
-    $("#buttonJourNuit").show();
+    $(".buttonJourNuit").show();
     clearInterval(timeout);
 }
 

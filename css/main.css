@@ -6,11 +6,8 @@ body {
 
 header {
   /* border: 1px; */
-  border-style: double;
-  color: black;
   margin-bottom: 1%;
   overflow: auto;
-  font-size: 200%;
 }
 
 img {
@@ -22,17 +19,36 @@ img {
   margin-right: auto;
 }
 
-#myLink {
+.bottomBar {
+  background-color: #f1e8cf;
+  border-style: outset;
+  border-width: 3px;
+  border-color: #868484;
+  position: fixed;
+  left: -5px;
+  height: 50px;
+  bottom: -5px;
+  right: -5px;
+}
+
+.myLink {
   position: fixed;
   left: 15px;
-  bottom: 15px;
+  bottom: 12px;
+}
+
+.box {
+  border-style: outset;
+  border-width: 3px;
+  border-color: #868484;
+  border-radius: 10px;
 }
 
 .buttonJourNuit {
   cursor: pointer;
   position: fixed;
   right: 10px;
-  bottom: 15px;
+  bottom: 4px;
   border-style: outset;
   border-width: 3px;
   border-color: #868484;
@@ -50,29 +66,18 @@ img {
 .container {
   display: flex;
   flex-direction: row;
+  margin-bottom: 53px;
 }
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .container.small {
     flex-direction: column;
   }
 }
 
 .item {
-  width: 100%;
-  border-style: outset;
-  border-width: 3px;
-  border-color: #868484;
-  border-radius: 10px;
-  margin: 1%;
+  width: 97%;
+  margin-top: 1%;
   padding: 1%;
-}
-.item.img {
-  width: 31%;
-}
-@media (max-width: 600px) {
-  .item.img.small {
-    width: 96%;
-  }
 }
 
 .container_Item {
@@ -95,7 +100,6 @@ img {
 
 .Nuit {
   color: #b8b8b8;
-  border-color: white;
   background-color: #645f5f;
   transition: 0.4s;
 }
@@ -112,6 +116,10 @@ img {
   text-align: center;
   line-height: 1;
   padding: 0;
+}
+
+.quote {
+  font-family: Aladin;
 }
 
 .NoSelect {

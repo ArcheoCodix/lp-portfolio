@@ -1,6 +1,8 @@
+$backColor: #f1e8cf ;
+
 body
 {
-    background-color: #f1e8cf;
+    background-color: $backColor;
     transition: .4s;
     font-family: cursive;
 }
@@ -8,12 +10,12 @@ body
 header
 {
     /* border: 1px; */
-    border-style: double;
+    // border-style: double;
     // height: 15vh;
-    color: black;
+    // color: black;
     margin-bottom: 1%;
     overflow: auto;
-    font-size: 200%;
+    // font-size: 200%;
 
     // &.Jour
     // {
@@ -32,16 +34,37 @@ img
     margin-right: auto;
 }
 
+.bottomBar
+{
+    background-color: $backColor;
+    border-style: outset;
+    border-width: 3px;
+    border-color: #868484;
+    position: fixed;
+    left: -5px;
+    height: 50px;
+    bottom: -5px;
+    right: -5px;
+}
+
 // p
 // {
 //     white-space: pre;
 // }
 
-#myLink
+.myLink
 {
     position: fixed;
     left: 15px;
-    bottom: 15px;
+    bottom: 12px;
+}
+
+.box
+{
+    border-style: outset;
+    border-width: 3px;
+    border-color: #868484;
+    border-radius: 10px;
 }
 
 .buttonJourNuit
@@ -49,7 +72,7 @@ img
     cursor: pointer;
     position: fixed;
     right: 10px;
-    bottom: 15px;
+    bottom: 4px;
     border-style: outset;
     border-width: 3px;
     border-color: #868484;
@@ -72,8 +95,9 @@ img
 {
     display: flex;
     flex-direction: row;
+    margin-bottom: 53px;
 
-    @media (max-width: 600px) {
+    @media (max-width: 750px) {
         &.small {
             flex-direction: column;
         }
@@ -82,25 +106,10 @@ img
 
 .item
 {
-    width: 100%;
-    border-style: outset;
-    border-width: 3px;
-    border-color: #868484;
-    border-radius: 10px;
-    margin: 1%;
+    width: 97%;
+    margin-top: 1%;
+    // margin-bottom: 1%;
     padding: 1%;
-
-    &.img
-    {
-        width: 31%;
-
-        @media(max-width:600px){
-            &.small
-            {
-                width: 96%;
-            }
-        }
-    }
 }
 
 .container_Item
@@ -129,7 +138,7 @@ img
 .Nuit
 {
     color: #b8b8b8;
-    border-color: white;
+    // border-color: white;
     background-color: #645f5f;
     transition: .4s;
 }
@@ -150,6 +159,11 @@ img
     line-height: 1;
     padding: 0;
     // max-height: 100%;
+}
+
+.quote
+{
+    font-family: Aladin;
 }
 
 .NoSelect {
